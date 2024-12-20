@@ -15,6 +15,7 @@
         "directory": "packages/jobs"
     },
     "dependencies": {
+        "@aws-sdk/client-ecs": "^3.716.0",
         "@nangohq/data-ingestion": "file:../data-ingestion",
         "@nangohq/database": "file:../database",
         "@nangohq/kvstore": "file:../kvstore",

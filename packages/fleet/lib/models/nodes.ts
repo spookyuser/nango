@@ -17,6 +17,7 @@ export const validNodeStateTransitions = [
     { from: 'PENDING', to: 'ERROR' },
     { from: 'STARTING', to: 'RUNNING' },
     { from: 'STARTING', to: 'ERROR' },
+    { from: 'RUNNING', to: 'RUNNING' }, // required to re-register a node, for example if it crashed
     { from: 'RUNNING', to: 'OUTDATED' },
     { from: 'RUNNING', to: 'ERROR' },
     { from: 'OUTDATED', to: 'FINISHING' },

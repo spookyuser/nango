@@ -57,6 +57,19 @@ export const ENVS = z.object({
     IDLE_MAX_DURATION_MS: z.coerce.number().default(0),
     RUNNER_NODE_ID: z.coerce.number().optional(),
     RUNNER_URL: z.string().url().optional(),
+    RUNNER_AWS_REGION: z.string().default('us-west-2'),
+    // TODO
+    RUNNER_AWS_LOGS_GROUP: z.string().default('/ecs/staging/runners/runner'),
+    RUNNER_AWS_EXECUTION_ROLE_ARN: z.string().default('arn:aws:iam::291213480759:role/staging-runners-execution-role'),
+    RUNNER_AWS_ECS_CLUSTER: z.string().default('staging-runners'),
+    RUNNER_AWS_SUBNETS: z
+        .string()
+        .default('subnet-0bd5596d8b449b892,subnet-0ba28f761945ba274,subnet-052b63adf997efda8,subnet-03be53045a38eddcb')
+        .transform((value) => value.split(',').map((v) => v.trim())),
+    RUNNER_AWS_SECURITY_GROUPS: z
+        .string()
+        .default('sg-0772bff72a873e17f')
+        .transform((value) => value.split(',').map((v) => v.trim())),
 
     // FLEET
     FLEET_TIMEOUT_PENDING_MS: z.coerce
