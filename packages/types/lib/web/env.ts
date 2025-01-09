@@ -9,6 +9,7 @@ export interface WindowEnv {
     publicKoalaApiUrl: string;
     publicKoalaCdnUrl: string;
     isCloud: boolean;
+    release: string;
     features: {
         logs: boolean;
         scripts: boolean;

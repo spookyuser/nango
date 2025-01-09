@@ -19,7 +19,8 @@ Sentry.init({
     tracesSampleRate: 0.1,
     replaysSessionSampleRate: 0.1,
     replaysOnErrorSampleRate: 0.3,
-    maxBreadcrumbs: 50
+    maxBreadcrumbs: 50,
+    release: globalEnv.release
 });
 
 export const SentryRoutes = Sentry.withSentryReactRouterV6Routing(Routes);

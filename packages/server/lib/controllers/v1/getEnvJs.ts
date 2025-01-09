@@ -15,6 +15,7 @@ export const getEnvJs = asyncWrapper<any, any>((_, res) => {
         publicKoalaApiUrl: process.env['PUBLIC_KOALA_API_URL'] || '',
         publicKoalaCdnUrl: process.env['PUBLIC_KOALA_CDN_URL'] || '',
         isCloud,
+        release: process.env['GIT_HASH'] || 'dev',
         features: {
             logs: envs.NANGO_LOGS_ENABLED,
             scripts: flagHasScripts,
